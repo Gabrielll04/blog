@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {  
+        @apply w-screen h-screen
+    }
+    .navButton {
+        @apply transition ease-in-out px-1 rounded hover:bg-zinc-300 hover:font-semibold
+    }
+}
