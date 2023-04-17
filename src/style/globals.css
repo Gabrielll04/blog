@@ -7,6 +7,9 @@
         @apply w-screen h-screen
     }
     .navButton {
-        @apply transition ease-in-out px-1 rounded hover:bg-zinc-300 hover:font-semibold
+        @apply font-semibold transition-all ease-in-out duration-300 px-2 rounded hover:bg-zinc-300
+    }
+    .land-button {
+        @apply font-semibold flex px-2 space-x-1 items-center h-20 hover:scale-105 hover:shadow-2xl transition rounded ring-1
     }
 }
