@@ -7,8 +7,8 @@ import {
   SiInstagram,
 } from "react-icons/si";
 import {
-  TbBrandTypescript,
-  TbBrandNextjs,
+  TbAlignBoxLeftTop,
+  TbAddressBook,
   TbMoonStars,
   TbSun,
 } from "react-icons/tb";
@@ -40,11 +40,11 @@ function App() {
   }
 
   return (
-    <body className={darkMode ? "dark" : ""}>
-      <div className="flex flex-col w-screen h-screen max-w-none max-h-none transition ease-in-out delay-400">
+    <body className={`w-screen h-screen ${darkMode ? "dark" : ""}`}>
+      <div className={`flex flex-col max-w-none max-h-none transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
         <SideBar />
-        <div className="flex sm:my-auto sm:flex-col justify-center items-center px-8 sm:px-0">
-          <div className="flex sm:flex-row flex-col items-center w-[66rem] sm:space-x-5">
+        <div className="flex sm:flex-col justify-center items-center px-8 sm:px-0 sm:my-auto">
+          <div className="flex my-auto sm:flex-row flex-col items-center w-[66rem] sm:space-x-5">
             <div className="flex justify-center items-center sm:w-[33rem] sm:h-[33rem] hover:ring-zinc-300">
               <SiOpenaigym className="w-52 h-52 sm:w-96 sm:h-96 text-green-500" />
             </div>
@@ -53,18 +53,23 @@ function App() {
                 <span className="sm:font-bold sm:text-5xl invisible sm:visible">
                   gabriel.dev
                 </span>
-                <span className="text-xl text-center sm:text-start">
-                  Using my passion to solve your problems
+                <span className="text-lg text-center sm:text-start w-96">
+                  Welcome to my personal site! I'am currently studying Software
+                  Engineering and i am learning about various
+                  technologies such as Docker, TS, Next13 and NixOS. Additionally, i
+                  have been exploring function programming language like Nix
+                  and Elixir! Please fell free to visit my portfolio and blogs
+                  using the links below.
                 </span>
               </div>
               <div className="flex flex-col h-52 items-center sm:items-start">
                 <div className="land-button ring-green-200 dark:ring-green-900 bg-green-100 cursor-pointer dark:bg-green-400 mb-3">
-                  <TbBrandTypescript className="text-green-700 text-4xl" />
-                  <span className="font-semibold text-xl">Blog</span>
+                  <TbAddressBook className="text-green-700 text-4xl" />
+                  <span className="font-semibold text-xl">Portfolio</span>
                 </div>
                 <div className="land-button ring-indigo-200 dark:ring-indigo-900 bg-indigo-100 cursor-pointer dark:bg-indigo-400">
-                  <TbBrandNextjs className="text-indigo-700 text-4xl" />
-                  <span className="font-semibold text-xl">Next.js</span>
+                  <TbAlignBoxLeftTop className="text-indigo-700 text-4xl" />
+                  <span className="font-semibold text-xl">Blog</span>
                 </div>
                 <div className="flex w-full h-10 sm:justify-start sm:space-x-2 sm:mt-0 justify-center space-x-4 mt-3">
                   <a href="#" className="h-full">

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    body {  
+    html {  
         @apply w-screen h-screen bg-slate-50
     }
     .navButton {
