@@ -41,7 +41,7 @@ function App() {
 
   return (
     <body className={darkMode ? "dark" : ""}>
-      <div className="flex flex-col max-w-none max-h-none transition ease-in-out delay-400">
+      <div className="flex flex-col w-screen h-screen max-w-none max-h-none transition ease-in-out delay-400">
         <SideBar />
         <div className="flex sm:my-auto sm:flex-col justify-center items-center px-8 sm:px-0">
           <div className="flex sm:flex-row flex-col items-center w-[66rem] sm:space-x-5">
