@@ -7,13 +7,17 @@
         @apply w-screen h-screen bg-slate-50
     }
     .navButton {
-        @apply font-bold transition-all ease-in-out duration-300 rounded decoration-2 underline-offset-4 hover:underline focus:bg-neutral-800 focus:text-white invisible sm:visible 
+        @apply font-bold transition-all ease-in-out duration-300 rounded decoration-2 underline-offset-4 hover:underline active:bg-neutral-800 active:text-white invisible sm:visible 
     }
     .land-button {
-        @apply sm:w-96 h-20 w-[80%] font-semibold flex px-2 space-x-1 items-center hover:-translate-y-1 hover:shadow-lg transition rounded ring-1
+        @apply sm:w-96 h-20 w-[80%] font-semibold flex px-2 space-x-1 items-center hover:-translate-y-1 hover:shadow-lg transition rounded ring-1 dark:text-zinc-900 
     }
 
     .dropItem {
-        @apply font-semibold 
+        @apply font-semibold p-1 active:bg-zinc-200 rounded
+    }
+
+    .dark {
+        @apply bg-zinc-800 text-white
     }
 }   
