@@ -13,8 +13,6 @@ import {
   TbSun,
 } from "react-icons/tb";
 
-import SideBar from "./Components/SideBar";
-
 function App() {
   let darkModeToggle: any = localStorage.getItem("dark-mode"); //getting the localstorage data
   let parsedDarkMode: any = null;
@@ -40,10 +38,8 @@ function App() {
   }
 
   return (
-    <body className={`w-screen h-screen ${darkMode ? "dark" : ""}`}>
-      <div className={`flex flex-col max-w-none max-h-none transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
-        <SideBar />
-        <div className="flex sm:flex-col justify-center items-center px-8 sm:px-0 sm:my-auto">
+      <div className={`flex flex-col max-w-none max-h-none min-h-screen transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
+        <div className="flex sm:flex-col justify-center items-center px-8 sm:px-0 sm:my-auto ">
           <div className="flex my-auto sm:flex-row flex-col items-center w-[66rem] sm:space-x-5">
             <div className="flex justify-center items-center sm:w-[33rem] sm:h-[33rem] hover:ring-zinc-300">
               <SiOpenaigym className="w-52 h-52 sm:w-96 sm:h-96 text-green-500" />
@@ -63,7 +59,7 @@ function App() {
                 </span>
               </div>
               <div className="flex flex-col h-52 items-center sm:items-start">
-                <div className="land-button ring-green-200 dark:ring-green-900 bg-green-100 cursor-pointer dark:bg-green-400 mb-3">
+                <div className="land-button ring-green-200 dark:ring-green-900 bg-green-100 cursor-pointer dark:bg-green-400 mb-3 animate-button">
                   <TbAddressBook className="text-green-700 text-4xl" />
                   <span className="font-semibold text-xl">Portfolio</span>
                 </div>
@@ -73,16 +69,16 @@ function App() {
                 </div>
                 <div className="flex w-full h-10 sm:justify-start sm:space-x-2 sm:mt-0 justify-center space-x-4 mt-3">
                   <a href="#" className="h-full">
-                    <SiLinkedin className="w-5 h-full text-gray-300" />
+                    <SiLinkedin className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#0e76a8]" />
                   </a>
                   <a href="#" className="h-full">
-                    <SiTwitter className="w-5 h-full text-gray-300" />
+                    <SiTwitter className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#1DA1F2]" />
                   </a>
                   <a href="#" className="h-full">
-                    <SiGithub className="w-5 h-full text-gray-300" />
+                    <SiGithub className="w-5 h-full text-gray-300 transition ease-in-out hover:text-black" />
                   </a>
                   <a href="#" className="h-full">
-                    <SiInstagram className="w-5 h-full text-gray-300" />
+                    <SiInstagram className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#C13584]" />
                   </a>
                 </div>
               </div>
@@ -96,7 +92,6 @@ function App() {
           {darkMode ? <TbSun /> : <TbMoonStars />}
         </button>
       </div>
-    </body>
   );
 }
 
