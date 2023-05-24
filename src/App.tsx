@@ -46,6 +46,7 @@ function App() {
                 <TbAlignBoxLeftTop className="text-indigo-700 text-4xl" />
                 <span className="font-semibold text-xl">Blog</span>
               </div>
+              <SocialButtons/>
             </div>
           </div>
         </div>
