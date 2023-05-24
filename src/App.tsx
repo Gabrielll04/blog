@@ -50,14 +50,10 @@ function App() {
             </div>
           </div>
         </div>
-        <button
-          className="self-end text-3xl mr-3 mb-3 sm:mr-10 sm:mb-7 rounded-full shadow-inner"
-          onClick={() => themeToggle()}
-        >
-          {darkMode ? <TbSun /> : <TbMoonStars />}
-        </button>
+        <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
       </div>
-  );
+    </main>
+  )
 }
 
 export default App;
