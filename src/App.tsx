@@ -8,27 +8,11 @@ import getTheme from "./lib/get-theme"
 import SideBar from "./Components/side-bar"
 
 function App() {
-  let darkModeToggle: any = localStorage.getItem("dark-mode"); //getting the localstorage data
-  let parsedDarkMode: any = null;
-
-  if (darkModeToggle != null) {
-    parsedDarkMode = JSON.parse(darkModeToggle); //if the localstorage data != null, then set to a useState
-  }
-
-  const [darkMode, setDarkMode] = useState<boolean>(parsedDarkMode);
-
-  function themeToggle(): void {
-    if (!darkMode) {
-      localStorage.setItem("dark-mode", "true");
-    } else {
-      localStorage.setItem("dark-mode", "false");
-    }
-
-    let darkModeToggle: any = localStorage.getItem("dark-mode");
-    if (darkModeToggle != null) {
-      const parsedDarkModeToggle: boolean = JSON.parse(darkModeToggle);
-      setDarkMode(parsedDarkModeToggle);
-    }
+  const usrTheme = getTheme()
+  const [darkMode, setDarkMode] = useState<boolean>(usrTheme)
+  
+  function themeToggleHandler() {
+    ThemeToggle(usrTheme, setDarkMode)
   }
 
   return (
@@ -58,29 +42,9 @@ function App() {
                 <TbAddressBook className="text-green-700 text-4xl" />
                 <span className="font-semibold text-xl">Portfolio</span>
               </div>
-              <div className="flex flex-col h-52 items-center sm:items-start">
-                <div className="land-button ring-green-200 dark:ring-green-900 bg-green-100 cursor-pointer dark:bg-green-400 mb-3 animate-button">
-                  <TbAddressBook className="text-green-700 text-4xl" />
-                  <span className="font-semibold text-xl">Portfolio</span>
-                </div>
-                <div className="land-button ring-indigo-200 dark:ring-indigo-900 bg-indigo-100 cursor-pointer dark:bg-indigo-400">
-                  <TbAlignBoxLeftTop className="text-indigo-700 text-4xl" />
-                  <span className="font-semibold text-xl">Blog</span>
-                </div>
-                <div className="flex w-full h-10 sm:justify-start sm:space-x-2 sm:mt-0 justify-center space-x-4 mt-3">
-                  <a href="#" className="h-full">
-                    <SiLinkedin className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#0e76a8]" />
-                  </a>
-                  <a href="#" className="h-full">
-                    <SiTwitter className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#1DA1F2]" />
-                  </a>
-                  <a href="#" className="h-full">
-                    <SiGithub className="w-5 h-full text-gray-300 transition ease-in-out hover:text-black" />
-                  </a>
-                  <a href="#" className="h-full">
-                    <SiInstagram className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#C13584]" />
-                  </a>
-                </div>
+              <div className="land-button ring-indigo-200 dark:ring-indigo-900 bg-indigo-100 cursor-pointer dark:bg-indigo-400">
+                <TbAlignBoxLeftTop className="text-indigo-700 text-4xl" />
+                <span className="font-semibold text-xl">Blog</span>
               </div>
             </div>
           </div>
