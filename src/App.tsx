@@ -50,8 +50,8 @@ function App() {
             </div>
           </div>
         </div>
-        <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
       </div>
+      <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
     </main>
   )
 }
