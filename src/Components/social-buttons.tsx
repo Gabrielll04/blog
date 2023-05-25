@@ -15,6 +15,6 @@ export default function SocialButtons() {
                 <a href="#" className="h-full">
                   <SiInstagram className="w-5 h-full text-gray-300 transition ease-in-out hover:text-[#C13584]" />
                 </a>
-              </div>
+        </div>
     )
 }

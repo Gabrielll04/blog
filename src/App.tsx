@@ -42,17 +42,19 @@ function App() {
                 <TbAddressBook className="text-green-700 text-4xl" />
                 <span className="font-semibold text-xl">Portfolio</span>
               </div>
-              <div className="land-button ring-indigo-200 dark:ring-indigo-900 bg-indigo-100 cursor-pointer dark:bg-indigo-400">
+              <a href="/blog" className="land-button ring-indigo-200 dark:ring-indigo-900 bg-indigo-100 cursor-pointer dark:bg-indigo-400">
                 <TbAlignBoxLeftTop className="text-indigo-700 text-4xl" />
                 <span className="font-semibold text-xl">Blog</span>
-              </div>
+              </a>
               <SocialButtons/>
             </div>
           </div>
         </div>
       </div>
-      <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
-    </main>
+      <div className="flex bottom-0 right-0 fixed">
+        <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
+      </div>
+      </main>
   )
 }
 
