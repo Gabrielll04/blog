@@ -1,13 +1,27 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import getTheme from "../lib/get-theme"
 import ThemeToggle from "../lib/theme-toggle"
 import ThemeButton from "../Components/ui/theme-button"
 import SideBar from "../Components/side-bar"
 import PostCard from "../Components/post-card"
 
+import { getPosts } from "../lib/db"
+
 export default function BlogPage() {
   const usrTheme = getTheme()
   const [darkMode, setDarkMode] = useState<boolean>(usrTheme)
+  const [feed, setFeed] = useState()
+
+  useEffect(() => {
+    async function getFeed(getPosts: Function) {
+      const feed = await getPosts() 
+      return setFeed(feed)
+    }
+
+    getFeed(getPosts)
+  
+    console.log(feed)
+  })
 
   function themeToggleHandler() {
     ThemeToggle(usrTheme, setDarkMode)
