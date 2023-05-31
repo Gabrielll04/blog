@@ -14,18 +14,20 @@ export default function BlogPage() {
   }
 
   return (
-    <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto lg:overflow-hidden transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
+    <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
       <SideBar />
       <section className="mx-auto w-[30rem] h-full max-h-none">
-        <article className="flex flex-col mt-5">
-          <p className="font-semibold text-2xl">Welcome to my blog! &#128640;</p>
-          <span className="text-lg">Hear you can read posts about topics that interest me.</span>
-          <span className="opacity-70 mt-6">Some posts may have been written only in portuguese.</span>
-          <hr className="opacity-70 mt-6"/>
+        <article className="flex flex-col h-44 justify-center gap-2">
+          <p className="font-semibold text-4xl mt-2">Welcome to my blog! &#128640;</p>
+          <span className="text-xl">Posts about interesting topics</span>
         </article >
+
         <article className="flex flex-col mt-6">
-          <p className="text-2xl font-semibold">Blog</p>
-          <div className="flex flex-col w-full py-5">
+          <p className="font-semibold text-2xl">Posts</p>
+          <div className="flex flex-col w-full py-5 space-y-5">
+            <PostCard />
+            <PostCard />
+            <PostCard />
             <PostCard />
           </div>
         </article>
