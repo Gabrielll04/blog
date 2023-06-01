@@ -6,6 +6,7 @@ import SideBar from "../Components/side-bar"
 import PostCard from "../Components/post-card"
 import { getPosts } from "../lib/db"
 import { Post } from "../lib/models"
+import data from '../../datasets/PostsSet.json'
 
 export default function BlogPage() {
   const usrTheme = getTheme()
@@ -33,9 +34,9 @@ export default function BlogPage() {
         <article className="flex flex-col mt-6">
           <p className="font-semibold text-2xl">Posts</p>
           <div className="flex flex-col w-full py-5 space-y-5">
-            {feed ? feed.map((post: Post) => (
+            {data.map((post: Post) => (
               <PostCard darkMode={darkMode} title={post.Title} content={post.Content} id={post.id} key={post.id} />
-            )) : <span>Something weird prevents the app to connect on database, try it later</span>}
+            ))}
           </div>
         </article>
       </section>
