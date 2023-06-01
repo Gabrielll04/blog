@@ -1,11 +1,6 @@
 import db from "./firebase"
 import { collection, getDocs, query, where } from "./firebase"
-
-interface Post {
-    id: string,
-    Title: string,
-    Content: string
-}
+import { Post } from "./models"
 
 const getPost = (postTitle: string) => new Promise(async (resolve, reject) => {
     try {
@@ -17,7 +12,9 @@ const getPost = (postTitle: string) => new Promise(async (resolve, reject) => {
             post.push({
                 id: p.id,
                 Title: p.data().Title,
-                Content: p.data().Content
+                Content: p.data().Content,
+                Topics: p.data().Topics,
+                CreatedAt: p.data().CreatedAt
             })
         })
         return resolve(post)
@@ -31,11 +28,13 @@ const getPosts = () => new Promise(async (resolve, reject) => {
         const docRef = collection(db, "posts")
         const posts: Post[] = []
         const querySnapshot = await getDocs(docRef)
-        querySnapshot.forEach((post) => {
+        querySnapshot.forEach((p) => {
             posts.push({
-                id: post.id,
-                Title: post.data().Title,
-                Content: post.data().Content
+                id: p.id,
+                Title: p.data().Title,
+                Content: p.data().Content,
+                Topics: p.data().Topics,
+                CreatedAt: p.data().CreatedAt
              })
         })
         return resolve(posts)
