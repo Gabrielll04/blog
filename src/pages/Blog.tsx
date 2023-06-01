@@ -4,24 +4,19 @@ import ThemeToggle from "../lib/theme-toggle"
 import ThemeButton from "../Components/ui/theme-button"
 import SideBar from "../Components/side-bar"
 import PostCard from "../Components/post-card"
-
 import { getPosts } from "../lib/db"
+import { Post } from "../lib/models"
 
 export default function BlogPage() {
   const usrTheme = getTheme()
   const [darkMode, setDarkMode] = useState<boolean>(usrTheme)
-  const [feed, setFeed] = useState()
+  const [feed, setFeed] = useState<any>()
 
-  useEffect(() => {
-    async function getFeed(getPosts: Function) {
-      const feed = await getPosts() 
-      return setFeed(feed)
-    }
-
-    getFeed(getPosts)
-  
-    console.log(feed)
-  })
+  // async function getFeed(getPosts: Function) {
+  //   // const feed = await getPosts()
+  //   return setFeed(feed)
+  // }
+  // getFeed(getPosts)
 
   function themeToggleHandler() {
     ThemeToggle(usrTheme, setDarkMode)
@@ -35,19 +30,17 @@ export default function BlogPage() {
           <p className="font-semibold text-4xl mt-2">Welcome to my blog! &#128640;</p>
           <span className="text-xl">Posts about interesting topics</span>
         </article >
-
         <article className="flex flex-col mt-6">
           <p className="font-semibold text-2xl">Posts</p>
           <div className="flex flex-col w-full py-5 space-y-5">
-            <PostCard />
-            <PostCard />
-            <PostCard />
-            <PostCard />
+            {feed ? feed.map((post: Post) => (
+              <PostCard darkMode={darkMode} title={post.Title} content={post.Content} id={post.id} key={post.id} />
+            )) : <span>Something weird prevents the app to connect on database, try it later</span>}
           </div>
         </article>
       </section>
       <div className="bottom-0 right-0 fixed">
-        <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
+        <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler} />
       </div>
     </main>
   )

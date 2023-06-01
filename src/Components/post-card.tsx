@@ -1,9 +1,9 @@
-export default function PostCard({}) {
+export default function PostCard({darkMode, title, id, content}: any) {
     return (
-        <a className="flex flex-col w-[30rem] cursor-pointer gap-2 bg-zinc-100 p-5 rounded-xl">
-            <span className="font-semibold text-xl">Title big title hearrrrrrrrrrrrrrrrrrrrrr and the inspirations mahcine  age</span>
+        <a href={`/blog/${id}`} className={`flex flex-col w-full max-h-96 cursor-pointer overflow-hidden gap-3 p-5 rounded-xl ${darkMode ? " bg-zinc-800" : "bg-zinc-300"}`}>
+            <span className="font-semibold text-xl">{title}</span>
             <div className="max-w-max text-sm font-semibold text-green-900 px-2 rounded-full bg-green-300">Fullstack development</div>
-            <span className="opacity-70">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga dignissimos vitae alias qui recusandae eum quas cumque, sed autem adipisci eveniet quae? Ab dignissimos tempora voluptates nobis. Necessitatibus, quibusdam est?</span>
+            <span className="opacity-70">{content}</span>
         </a>
     )
 }
