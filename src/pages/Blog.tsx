@@ -35,7 +35,7 @@ export default function BlogPage() {
           <p className="font-semibold text-2xl">Posts</p>
           <div className="flex flex-col w-full py-5 space-y-5">
             {data.map((post: Post) => (
-              <PostCard darkMode={darkMode} title={post.Title} content={post.Content} id={post.id} key={post.id} />
+              <PostCard darkMode={darkMode} title={post.Title} content={post.Content} id={post.id} topics={post.Topics} key={post.id} />
             ))}
           </div>
         </article>
