@@ -5,7 +5,7 @@ import SocialButtons from "./Components/social-buttons"
 import ThemeToggle from "./lib/theme-toggle"
 import ThemeButton from "./Components/ui/theme-button"
 import getTheme from "./lib/get-theme"
-import SideBar from "./Components/side-bar"
+import Navbar from "./Components/nav-bar"
 
 function App() {
   const usrTheme = getTheme()
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto lg:overflow-hidden transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
-      <SideBar/>
+      <Navbar/>
       <div className="flex sm:flex-col justify-center items-center px-8 sm:px-0 lg:my-auto ">
         <div className="flex my-auto flex-col items-center sm:space-x-5 lg:w-[66rem] lg:flex-row">
           <div className="flex justify-center items-center lg:w-[33rem] lg:h-[33rem]">

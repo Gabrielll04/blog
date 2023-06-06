@@ -26,7 +26,7 @@ import { Menu, Transition } from "@headlessui/react"
 //   )
 // }
 
-export default function SideBar() {
+export default function Navbar() {
   return (
     <div className="items-center p-2 justify-center sm:space-x-32 w-full h-12 sm:h-20 z-10 sm:text-xl mb-10 sm:mb-0 sm:px-0 px-3 hidden sm:flex">
       <button><SiGithub className="text-4xl sm:hover:scale-110 transition sm:visible" /></button>

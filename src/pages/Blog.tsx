@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import getTheme from "../lib/get-theme"
 import ThemeToggle from "../lib/theme-toggle"
 import ThemeButton from "../Components/ui/theme-button"
-import SideBar from "../Components/side-bar"
+import Navbar from "../Components/nav-bar"
 import PostCard from "../Components/post-card"
 import { getPosts } from "../lib/db"
 import { Post } from "../lib/models"
@@ -25,7 +25,7 @@ export default function BlogPage() {
 
   return (
     <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
-      <SideBar />
+      <Navbar />
       <section className="mx-auto w-[30rem] h-full max-h-none">
         <article className="flex flex-col h-44 justify-center gap-2">
           <p className="font-semibold text-4xl mt-2">Welcome to my blog! &#128640;</p>
