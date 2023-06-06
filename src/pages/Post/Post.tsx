@@ -1,10 +1,21 @@
 import { useParams } from "react-router-dom"
 import posts from '../../../datasets/PostsSet.json'
+import ThemeToggle from "../../lib/theme-toggle"
 import SideBar from "../../Components/side-bar"
+import getTheme from "../../lib/get-theme"
+import { useState } from "react"
+import ThemeButton from "../../Components/ui/theme-button"
 
 export default function PostPage() {
+    const usrTheme = getTheme()
+    const [darkMode, setDarkMode] = useState<boolean>(usrTheme)
+
+    function themeToggleHandler() {
+        ThemeToggle(usrTheme, setDarkMode)
+    }
+
     const { postid } = useParams()
-    
+
     const post = posts.find((post) => post.id === postid)
     if (!post) {
         return (
@@ -16,8 +27,8 @@ export default function PostPage() {
     const formattedData = createdAt.toLocaleDateString("pt-BR", { timeZone: "UTC" })
 
     return (
-        <main className="w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400">
-            <SideBar/>
+        <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
+            <SideBar />
             <section className="flex w-full max-h-none justify-center items-center p-12">
                 <p className="text-center font-bold text-7xl w-[50rem]">{post.Title}</p>
             </section>
@@ -33,6 +44,9 @@ export default function PostPage() {
                     <label className="antialiased text-justify indent-8 text-lg w-[70rem]">{post.Content}</label>
                 </article>
             </section>
+            <div className="bottom-0 right-0 fixed">
+                <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler} />
+            </div>
         </main>
     )
 }
