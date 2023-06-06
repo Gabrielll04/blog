@@ -54,7 +54,7 @@ function App() {
       <div className="flex bottom-0 right-0 fixed">
         <ThemeButton darkMode={darkMode} themeToggleHandler={themeToggleHandler}/>
       </div>
-      </main>
+    </main>
   )
 }
 
