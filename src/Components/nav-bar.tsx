@@ -28,12 +28,12 @@ import { Menu, Transition } from "@headlessui/react"
 
 export default function Navbar() {
   return (
-    <div className="items-center p-2 justify-center sm:space-x-32 w-full h-12 sm:h-20 z-10 sm:text-xl mb-10 sm:mb-0 sm:px-0 px-3 hidden sm:flex">
-      <button><SiGithub className="text-4xl sm:hover:scale-110 transition sm:visible" /></button>
-      <div className="flex sm:space-x-20 sm:visible :hidden">
-        <button className="navButton">Portfolio</button>
-        <button className="navButton">Blogs</button>
-        <button className="navButton">items</button>
+    <div className="items-center p-5 justify-center sm:space-x-32 w-full h-12 sm:h-32 z-10 sm:text-xl mb-10 sm:mb-0 sm:px-0 px-3 hidden sm:flex">
+      <button><SiGithub className="text-4xl sm:hover:scale-110 transition" /></button>
+      <div className="flex sm:space-x-20 sm:visible">
+        <a href="/" className="navButton">Home</a>
+        <a href="/blog" className="navButton">Blogs</a>
+        <a href="/whoami" className="navButton">Who am i</a>
       </div>
     </div>
   )
