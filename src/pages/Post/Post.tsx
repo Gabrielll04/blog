@@ -41,7 +41,7 @@ export default function PostPage() {
                     <span>{formattedData}</span>
                 </div>
                 <article className="flex w-full justify-center p-12">
-                    <label className="antialiased text-justify indent-8 text-lg w-[70rem]">{post.Content}</label>
+                    <label className="text-justify indent-8 text-lg w-[60rem] cursor-text">{post.Content}</label>
                 </article>
             </section>
             <div className="bottom-0 right-0 fixed">
