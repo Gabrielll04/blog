@@ -28,7 +28,7 @@ import { Menu, Transition } from "@headlessui/react"
 
 export default function Navbar() {
   return (
-    <div className="items-center p-5 justify-center sm:space-x-32 w-full h-12 sm:h-32 z-10 sm:text-xl mb-10 sm:mb-0 sm:px-0 px-3 hidden sm:flex">
+    <div className="justify-center p-5 sm:space-x-32 w-full h-12 z-10 sm:text-xl mb-10 sm:mb-0 sm:px-0 px-3 hidden sm:flex">
       <button><SiGithub className="text-4xl sm:hover:scale-110 transition" /></button>
       <div className="flex sm:space-x-20 sm:visible">
         <a href="/" className="navButton">Home</a>
