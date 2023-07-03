@@ -1,7 +1,8 @@
 export interface Post {
     id: string,
     Title: string,
-    Content: string
+    Synopsis: string,
+    Content: string,
     Topics: string[],
-    CreatedAt: string
+    CreatedAt: string,
 }
