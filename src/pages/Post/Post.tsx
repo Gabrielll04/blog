@@ -1,14 +1,25 @@
-import { useParams } from "react-router-dom"
+import React, { useParams } from "react-router-dom"
 import posts from '../../../datasets/PostsSet.json'
 import ThemeToggle from "../../lib/theme-toggle"
 import Navbar from "../../Components/nav-bar"
 import getTheme from "../../lib/get-theme"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ThemeButton from "../../Components/ui/theme-button"
+import { marked } from "marked"
+import { Post } from "../../lib/models"
+
+marked.use({
+    async: true,
+    pedantic: false,
+    gfm: true,
+    breaks: true,
+    headerIds: false,
+})
 
 export default function PostPage() {
     const usrTheme = getTheme()
     const [darkMode, setDarkMode] = useState<boolean>(usrTheme)
+    const [parsedContent, setParsedContent] = useState<React.HTMLProps<HTMLLabelElement> | null>()
 
     function themeToggleHandler() {
         ThemeToggle(usrTheme, setDarkMode)
@@ -26,6 +37,20 @@ export default function PostPage() {
     let createdAt = new Date(post.CreatedAt)
     const formattedData = createdAt.toLocaleDateString("pt-BR", { timeZone: "UTC" })
 
+    useEffect(() => {
+        async function parsingMDContent(post: Post) {
+            const parsedContent = await marked.parse(post.Content)
+            setParsedContent(parsedContent)
+            return
+        }
+
+        if (post === undefined) {
+            return
+        } else {
+            parsingMDContent(post)
+        }
+    }, [post])
+
     return (
         <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
             <Navbar />
@@ -41,7 +66,8 @@ export default function PostPage() {
                     <span>{formattedData}</span>
                 </div>
                 <article className="flex w-full justify-center p-12">
-                    <label className="text-justify indent-8 text-lg w-[60rem] cursor-text">{post.Content}</label>
+                    <label dangerouslySetInnerHTML={{ __html: parsedContent }} className="text-justify indent-8 text-lg w-[60rem] cursor-text">
+                    </label>
                 </article>
             </section>
             <div className="bottom-0 right-0 fixed">

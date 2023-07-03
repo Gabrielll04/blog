@@ -5,7 +5,7 @@ type ColorsObject = {
     text: string
 }
 
-export default function PostCard({ darkMode, title, id, content, topics }: any) {
+export default function PostCard({ darkMode, title, id, content, topics, synopsis }: any) {
   const RandomColors: ColorsObject[] = [{background: '#86efac', text: '#166534'}, {background: '#fda4af', text: '#9f1239'}, {background: '#93c5fd', text: '#1e40af'}, {background: '#a5b4fc', text: '#5b21b6'}, {background: '#7dd3fc', text: '#075985'}];
   const [color, setColor] = useState<ColorsObject>();
 
@@ -35,7 +35,7 @@ export default function PostCard({ darkMode, title, id, content, topics }: any) 
           </div>
         ))}
       </div>
-      <span className="opacity-70">{content}</span>
+      <span className="opacity-70">{synopsis}</span>
     </a>
   );
 }
