@@ -38,10 +38,10 @@ function App() {
               </span>
             </div>
             <div className="flex flex-col h-52 items-center lg:items-start">
-              <div className="land-button ring-green-200 dark:ring-green-900 bg-green-100 cursor-pointer dark:bg-green-400 mb-3">
+              <a href="/whoami" className="land-button ring-green-200 dark:ring-green-900 bg-green-100 cursor-pointer dark:bg-green-400 mb-3">
                 <TbAddressBook className="text-green-700 text-4xl" />
-                <span className="font-semibold text-xl">Who am i?</span>
-              </div>
+                <span className="font-semibold text-xl">Who am I?</span>
+              </a>
               <a href="/blog" className="land-button ring-indigo-200 dark:ring-indigo-900 bg-indigo-100 cursor-pointer dark:bg-indigo-400">
                 <TbAlignBoxLeftTop className="text-indigo-700 text-4xl" />
                 <span className="font-semibold text-xl">Blog</span>
