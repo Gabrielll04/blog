@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="flex sm:space-x-20 sm:visible">
         <a href="/" className="navButton">Home</a>
         <a href="/blog" className="navButton">Blogs</a>
-        <a href="/whoami" className="navButton">Who am i</a>
+        <a href="/whoami" className="navButton">Who am I</a>
       </div>
     </div>
   )
