@@ -33,12 +33,12 @@ export default function BlogPage() {
   return (
     <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
       <Navbar />
-      <section className="mx-auto w-[30rem] h-full max-h-none">
-        <article className="flex flex-col h-44 justify-center gap-2">
-          <p className="font-semibold text-4xl mt-2">Welcome to my blog! &#128640;</p>
-          <span className="text-xl">Posts about interesting topics</span>
+      <section className="mx-auto sm:w-[30rem] h-full max-h-none">
+        <article className="flex flex-col h-44 items-center sm:items-start justify-center gap-2">
+          <p className="font-semibold text-2xl sm:text-4xl mt-2">Welcome to my blog! &#128640;</p>
+          <span className="text-sm sm:text-xl">Posts about interesting topics</span>
         </article >
-        <article className="flex flex-col mt-6">
+        <article className="flex flex-col mt-6 p-3 sm:p-0">
           <p className="font-semibold text-2xl">Posts</p>
           <div className="flex flex-col w-full py-5 space-y-5">
             {feed?.map((post: Post) => (
