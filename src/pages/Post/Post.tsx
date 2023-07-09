@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import ThemeButton from "../../Components/ui/theme-button"
 import { marked } from "marked"
 import { Post } from "../../lib/models"
+import BackButton from "../../Components/ui/back-button"
 
 marked.use({
     async: true,
@@ -54,11 +55,12 @@ export default function PostPage() {
     return (
         <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
             <Navbar />
-            <section className="flex w-full max-h-none justify-center items-center p-12">
+            <BackButton />
+            <section className="flex flex-col max-h-none justif y-center items-center p-10">
                 <p className="text-center font-bold text-7xl w-[50rem]">{post.Title}</p>
             </section>
             <section className="flex flex-col w-full max-h-none">
-                <div className="flex w-full h-20 px-20 justify-center py-3 gap-7 opacity-70">
+                <div className="flex justify-center gap-5 opacity-70 mb-5">
                     <span>Gabriel G. Carneiro</span>
                     {post.Topics.map((topic) => (
                         <span>{topic}</span>
