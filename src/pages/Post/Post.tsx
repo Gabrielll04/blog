@@ -56,11 +56,11 @@ export default function PostPage() {
         <main className={`flex flex-col w-screen h-screen max-h-none overflow-auto transition ease-in-out delay-400 ${darkMode ? "dark" : ""}`}>
             <Navbar />
             <BackButton />
-            <section className="flex flex-col max-h-none justif y-center items-center p-10">
-                <p className="text-center font-bold text-7xl w-[50rem]">{post.Title}</p>
+            <section className="flex flex-col max-h-none justify-center items-center p-10">
+                <p className="text-center font-bold text-5xl sm:text-7xl sm:w-[50rem]">{post.Title}</p>
             </section>
             <section className="flex flex-col w-full max-h-none">
-                <div className="flex justify-center gap-5 opacity-70 mb-5">
+                <div className="flex flex-col justify-center items-center text-sm gap-2 sm:items-start   sm:flex-row sm:text-base sm:gap-5 opacity-70 mb-5">
                     <span>Gabriel G. Carneiro</span>
                     {post.Topics.map((topic) => (
                         <span>{topic}</span>
